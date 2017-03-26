@@ -13,7 +13,7 @@ Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 BuildArch: x86_64
-Requires: mesa libXext mesa-libEGL libX11
+Requires: libXext mesa-libEGL libX11
 BuildRequires: make mesa-libEGL-devel libXext cmake gcc-c++ glm-devel
 Vendor: naelstrof <naelstrof@gmail.com>
 Url: https://github.com/naelstrof/slop/archive/v%{unmangled_version}
