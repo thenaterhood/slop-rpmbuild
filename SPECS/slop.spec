@@ -13,8 +13,8 @@ Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 BuildArch: x86_64
-Requires: glm-devel libXext
-BuildRequires: mesa-libEGL-devel libXext cmake gcc-c++ glm-devel
+Requires: mesa libXext mesa-libEGL libX11
+BuildRequires: make mesa-libEGL-devel libXext cmake gcc-c++ glm-devel
 Vendor: naelstrof <naelstrof@gmail.com>
 Url: https://github.com/naelstrof/slop/archive/v%{unmangled_version}
 
@@ -25,11 +25,11 @@ slop (Select Operation) is an application that queries for a selection from the 
 %setup -n %{name}-%{unmangled_version} -n %{name}-%{unmangled_version}
 
 %build
-cmake -DCMAKE_INSTALL_PREFIX="$RPM_BUILD_ROOT/usr/" ./
+cmake -DCMAKE_INSTALL_PREFIX="/usr" ./
 make
 
 %install
-make install
+make DESTDIR="$RPM_BUILD_ROOT" install
 sed -e s:$RPM_BUILD_ROOT::g install_manifest.txt > install_manifest_patched.txt
 
 %clean
