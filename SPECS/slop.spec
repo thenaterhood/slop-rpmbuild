@@ -30,12 +30,11 @@ make
 
 %install
 make DESTDIR="$RPM_BUILD_ROOT" install
-sed -e s:$RPM_BUILD_ROOT::g install_manifest.txt > install_manifest_patched.txt
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f install_manifest_patched.txt
+%files -f install_manifest.txt
 %defattr(-,root,root)
 
 %post
