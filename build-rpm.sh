@@ -1,5 +1,5 @@
 #!/bin/sh
-VERSION=5.3.37
+VERSION=5.3.27
 RPMBUILD_DIR=${HOME}/rpmbuild
 
 mkdir -p ${RPMBUILD_DIR}

@@ -1,6 +1,6 @@
 %define name slop
-%define version 5.3.37
-%define unmangled_version 5.3.37
+%define version 5.3.27
+%define unmangled_version 5.3.27
 %define release 1
 
 Summary: slop (Select Operation) is a screen region selection tool
@@ -12,7 +12,7 @@ License: GPLv3
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
-BuildArch: x86_64
+BuildArch: x86_64 i686
 Requires: libXext mesa-libEGL libX11
 BuildRequires: make mesa-libEGL-devel libXext cmake gcc-c++ glm-devel
 Vendor: naelstrof <naelstrof@gmail.com>
@@ -37,3 +37,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f install_manifest_patched.txt
 %defattr(-,root,root)
+
+%post
+ldconfig
