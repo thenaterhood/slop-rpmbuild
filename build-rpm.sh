@@ -5,7 +5,7 @@ RPMBUILD_DIR=${HOME}/rpmbuild
 mkdir -p ${RPMBUILD_DIR}
 echo "Downloading slop version ${VERSION}..."
 wget https://github.com/naelstrof/slop/archive/v${VERSION}.tar.gz -O ${RPMBUILD_DIR}/SOURCES/slop-${VERSION}.tar.gz
-
+cd ${RPMBUILD_DIR}
 echo "Installing build dependencies..."
 dnf builddep SPECS/slop.spec
 
