@@ -1,7 +1,7 @@
 %define name slop
 %define version 5.3.27
 %define unmangled_version 5.3.27
-%define release 1
+%define release 2
 
 Summary: slop (Select Operation) is a screen region selection tool
 Name: %{name}
